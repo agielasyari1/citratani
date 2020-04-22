@@ -1,0 +1,235 @@
+#
+# TABLE STRUCTURE FOR: barang
+#
+
+DROP TABLE IF EXISTS `barang`;
+
+CREATE TABLE `barang` (
+  `id_barang` int(11) NOT NULL AUTO_INCREMENT,
+  `id_kategori` int(11) NOT NULL,
+  `id_satuan` int(20) DEFAULT NULL,
+  `nama_barang` varchar(50) NOT NULL,
+  `stok` int(8) NOT NULL,
+  `hrg_beli` bigint(20) DEFAULT NULL,
+  `hrg_jual_eceran` bigint(20) DEFAULT NULL,
+  `hrg_jual_grosir` bigint(20) DEFAULT NULL,
+  `gudang` varchar(20) NOT NULL,
+  `created_by` varchar(20) NOT NULL,
+  `created_date` date NOT NULL,
+  `updated_by` varchar(20) NOT NULL,
+  `updated_date` date NOT NULL,
+  PRIMARY KEY (`id_barang`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+INSERT INTO `barang` (`id_barang`, `id_kategori`, `id_satuan`, `nama_barang`, `stok`, `hrg_beli`, `hrg_jual_eceran`, `hrg_jual_grosir`, `gudang`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('2', '3', '10', 'ARRIVO', '8', '4000', '37000', '35000', 'Gudang A', 'CT-ADM-0001', '2016-05-23', 'CT-ADM-0001', '2016-05-24');
+INSERT INTO `barang` (`id_barang`, `id_kategori`, `id_satuan`, `nama_barang`, `stok`, `hrg_beli`, `hrg_jual_eceran`, `hrg_jual_grosir`, `gudang`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('3', '3', '11', 'ARRIVO', '50', '4', '23000', '20000', 'Gudang A', 'CT-ADM-0001', '2016-05-23', 'CT-ADM-0001', '2016-05-23');
+INSERT INTO `barang` (`id_barang`, `id_kategori`, `id_satuan`, `nama_barang`, `stok`, `hrg_beli`, `hrg_jual_eceran`, `hrg_jual_grosir`, `gudang`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('4', '3', '12', 'ARRIVO', '49', '8', '12000', '9750', 'Gudang A', 'CT-ADM-0001', '2016-05-23', '', '0000-00-00');
+INSERT INTO `barang` (`id_barang`, `id_kategori`, `id_satuan`, `nama_barang`, `stok`, `hrg_beli`, `hrg_jual_eceran`, `hrg_jual_grosir`, `gudang`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('5', '5', '9', 'ad', '10', '8', '12000', '10000', 'Gudang B', 'CT-ADM-0001', '2016-05-23', '', '0000-00-00');
+
+
+#
+# TABLE STRUCTURE FOR: customer
+#
+
+DROP TABLE IF EXISTS `customer`;
+
+CREATE TABLE `customer` (
+  `id_customer` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_toko` varchar(50) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
+  `no_telp` varchar(100) NOT NULL,
+  `tipe` varchar(20) NOT NULL,
+  `created_by` varchar(20) NOT NULL,
+  `created_date` date NOT NULL,
+  `updated_by` varchar(20) DEFAULT NULL,
+  `updated_date` date DEFAULT NULL,
+  PRIMARY KEY (`id_customer`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('4', 'Toko Barokah', 'Sauri', 'Desa Pandabah - Kamal', '081803056631', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('5', 'UD. Maria Broely', 'H. Ali', 'Desa Kebun - Kamal', '081913553167', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('6', 'UD. Sumber Tani Makmur', 'Dedik Setiawan', 'Desa Gili Anyar - Kamal', '081333447733', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('7', 'Al-Ikhlas', 'Hj. Subaidah', 'Desa Pesanggrahan - Kwanyar', '085335342177', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('8', 'UD. Bina Tani Makmur', 'Moch. Hotib,S.HI', 'Desa Karang Entang - Kwanyar', '085731332777', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('9', 'UD. Kelapa', 'H. Abd. Manab Ismail', 'Desa Ketetang - Kwanyar', '081939318485', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('10', 'UD. Panca Putra', 'Hj. Zaitun', 'Pasar Kwanyar - Kwanyar', '08533189164', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('11', 'Toko Sinar Barokah', 'H. Muhari', 'Desa Duwak Buter - Kwanyar', '0817399107', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('12', 'UD. Taman Indah', 'Achwan Musoleh', 'Desa Batah Barat - Kwanyar', '0818331459', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('13', 'Tani Jaya', 'H. M. Dlofir Djailani', 'Jl. Raya Kwanyar  Modung - Kwanyar', '08784933925', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('14', 'Toko Rohman', 'Abd. Rachman', 'Desa Kesek - Labang', '085334074683', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('15', 'UD. Assalam', 'Sauri', 'Desa Jukong - Labang', '087855458600', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('16', 'Toko Slamet', 'H. Hosnan', 'Desa Sukolilo Timur - Labang', '085791828330', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('17', ' UD. Barata Jaya', 'H.M. Ibrahim', 'Desa Patereman - Modung', '087849771700', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('18', 'Toko Kurnia', 'H. Rusdi', 'Jl. Pasar Kedundung - Modung', '081330780290', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('19', 'UD. Setia Kawan', 'H. Suharyono', 'Jl. Raya Modung 20 - Modung', '081235884917', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('20', 'CV. Sumber Makmur', 'Hj. Siti Horimah', 'Desa Srabi Timur - Modung', '087705657849', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('21', 'Toko Timur Jaya', 'Drs. H. M. Said', 'Jl. Raya Kedundung - Modung', '08170064807', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('22', 'Al -Ummah', 'H. Abdul Azis', 'Jl. Raya Keleyan - socah', '087853403422', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('23', 'UD. Amanah', 'M. Hafid ', 'Desa Pernajuh - Socah', '08235531638', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('24', 'Gapoktan Timun Mas', 'Mat Dofir', 'Desa Buluh - Socah', '087866127188', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('25', 'UD. Lebur Barokah', 'M. Rubiyanto', 'Jl. Sawo Pasar Pa\'ajeman - Socah', '082301349755', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('26', 'Rahmat Hidayat', 'Zaenal', 'Bilaporah Selatan - Socah', '087851515597', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('27', 'Sumber Rejeki', 'Abdul Aji', 'Desa Parseh - Socah', '081803202000', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('28', 'Kios Barokah', 'Muhammad Jumai', 'Desa Kemuning - Tragah', '085235546020', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('29', 'Toko Rio Jaya', 'Muroso Al Agus S,S.Pd', 'Jl. Raya Tragah - Tragah', '082132883709', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('30', 'Toko Sinar Mulya', 'M. Abdul Rahman', 'Desa Soket Laok - Tragah', '087852320006', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('31', 'UD. Sumber Harapan', 'H. Zeini', 'Desa Tambin - Tragah', '082139865528', 'Distributor', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('32', 'Hj. Hasan', 'Bu Hj. Hasan', 'Besel - Burneh', '82301346674', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('33', 'Tani Jaya', 'Bu Roilah', 'Besel - Burneh', '85102154135', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('34', 'H. Kodir', 'H. Kodir', 'Tonaan - Burneh', '-', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('35', 'P. Tafin', 'P. Tafin ', 'Besel - Burneh', '-', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('36', 'Bu Hay', 'Bu hay', 'Pasar Arosbaya - Arosbaya', '82330632436 / 85648298899', 'Grosir', 'CT-ADM-0001', '2016-05-23', 'CT-ADM-0001', '2016-05-23');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('37', 'Bu Dibyo', 'Bu Dibyo', 'Pasar Arosbaya - Arosbaya', '82330232856', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('38', 'P. Agus', 'P. Agus', 'Klampis', '81216401551', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('39', 'Hj. Azizah', 'Hj. Azizah', 'Sepuluh', '87850896168', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('40', 'Hj. Munawar', 'Hj. Munawar', 'Sepuluh', '-', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('41', 'P. Mujib', 'P. Mujib ', 'Tanjung Bumi', '87752541085', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('42', 'H. Tumar', 'H. Tumar', 'Geger', '81931044406', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('43', 'H. Ali Wafah', 'H. Ali Wafah', 'Geger', '-', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('44', 'H. Munir', 'H. Munir', 'Tanah Merah', '81330261545', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('45', 'H. Ali', 'H. Ali ', 'Tanah Merah', '-', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('46', 'Zakaria', 'Zakaria', 'Petemon', '-', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('47', 'P. Sudarsono', 'P. Sudarsono', 'Lomaer - Blega', '87816168100', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('48', 'Jauhari', 'Jauhari', 'Blega', '85331124998', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('49', 'H. Muhlis', 'H. Muhlis', 'Blega', '-', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+INSERT INTO `customer` (`id_customer`, `nama_toko`, `nama`, `alamat`, `no_telp`, `tipe`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('50', 'Zaenal', 'Zaenal', 'Banyuates', '85230500036', 'Grosir', 'CT-ADM-0001', '2016-05-23', '-', '0000-00-00');
+
+
+#
+# TABLE STRUCTURE FOR: kategori
+#
+
+DROP TABLE IF EXISTS `kategori`;
+
+CREATE TABLE `kategori` (
+  `id_kategori` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kategori` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_kategori`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES ('3', 'Obat');
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES ('4', 'Bibit');
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES ('5', 'Pupuk');
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES ('6', 'Ikan');
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES ('7', 'Peralatan');
+INSERT INTO `kategori` (`id_kategori`, `nama_kategori`) VALUES ('8', 'Ayam');
+
+
+#
+# TABLE STRUCTURE FOR: satuan
+#
+
+DROP TABLE IF EXISTS `satuan`;
+
+CREATE TABLE `satuan` (
+  `id_satuan` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_satuan` varchar(30) NOT NULL,
+  PRIMARY KEY (`id_satuan`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('7', 'Sak');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('8', '1 kg');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('9', '2 kg');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('10', '500 ml');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('11', '250 ml');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('12', '100 ml');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('13', '250 gr');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('14', '40 gr');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('15', '2000 L');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('16', '80 ml');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('17', '1 L');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('18', '300 ml');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('19', '15 gr');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('20', '5 kg');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('21', 'Sachet');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('22', '225 butir');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('23', '125 butir');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('24', '350 butir');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('25', 'Kaleng');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('26', '400 butir');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('27', '1100 butir');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('28', '95 butir');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('29', '60 butir');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('30', '10 kg');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('31', '30 kg');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('32', '2,5 kg');
+INSERT INTO `satuan` (`id_satuan`, `nama_satuan`) VALUES ('33', 'Buah');
+
+
+#
+# TABLE STRUCTURE FOR: setting
+#
+
+DROP TABLE IF EXISTS `setting`;
+
+CREATE TABLE `setting` (
+  `ppn` int(3) NOT NULL DEFAULT '0',
+  `dir` varchar(1000) NOT NULL DEFAULT 'C:/',
+  PRIMARY KEY (`ppn`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `setting` (`ppn`, `dir`) VALUES ('10', 'E:/');
+
+
+#
+# TABLE STRUCTURE FOR: supplier
+#
+
+DROP TABLE IF EXISTS `supplier`;
+
+CREATE TABLE `supplier` (
+  `id_supplier` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(50) NOT NULL,
+  `nama_toko` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
+  `created_by` varchar(20) NOT NULL,
+  `created_date` date NOT NULL,
+  `updated_by` varchar(20) DEFAULT NULL,
+  `updated_date` date DEFAULT NULL,
+  PRIMARY KEY (`id_supplier`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('4', 'Ucup Supiani', 'PT. Petrokimia Gresik', 'Gresik\r\n', '031-3982100', 'CT-ADM-0001', '2016-05-23', 'CT-ADM-0001', '2016-05-24');
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('5', 'Wasis Muhammad', 'PT. Petrosida Gresik', 'Gresik', '081330791182', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('6', 'Haryanto', 'PT. Yasida', 'Gresik\r\n', '81366337360', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('7', 'Wiwit', 'PT. Pratama Sumber Milindo', 'Surabaya\r\n', '8155031606', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('8', 'Cak ik', 'PT. Tani Sejati', 'Malang\r\n', '811365160', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('9', 'Tutik', 'PT. Sumber Makmur Agroindo', 'Jombang\r\n', '0321-866188', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('10', 'Yuni', 'PT. Karisma Indoagro Universal', 'Jember\r\n', '0331-483333', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('11', 'P. Dhoho', 'PT. Agro Santosa', 'Banyuwangi\r\n', '0333-842698', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('12', 'H. Ali', 'Toko Pakan Ayam', 'Bangkalan\r\n', '87850780116', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('13', 'Bu Martin', 'Toko Cahaya Baru', 'Surabaya\r\n', '031-5479506', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('14', 'Aang', 'PT. Petamas Makmur Agro Jatim', 'Surabaya\r\n', '81357012489', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('15', 'Anto', 'PT. Swarna Prima Artha', 'Sidoarjo\r\n', '8117202897', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('16', 'H. Mustari', 'PT. Bunga Tani', 'Gresik\r\n', '8121687739', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+INSERT INTO `supplier` (`id_supplier`, `nama`, `nama_toko`, `alamat`, `no_telp`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES ('17', 'M. Hasan Bisry', 'PT. Boster', 'Surabaya\r\n', '87854836281', 'CT-ADM-0001', '2016-05-23', NULL, NULL);
+
+
+#
+# TABLE STRUCTURE FOR: user
+#
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
+  `posisi` int(2) NOT NULL,
+  `created_by` varchar(20) DEFAULT NULL,
+  `created_date` date DEFAULT NULL,
+  `updated_by` varchar(20) DEFAULT NULL,
+  `updated_date` date DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `user` (`username`, `password`, `nama`, `alamat`, `no_telp`, `posisi`, `created_by`, `created_date`, `updated_by`, `updated_date`, `status`, `photo`) VALUES ('CT-ADM-0001', '$2y$10$9DkPNWmRGzFJParBikhSXeZUauHiKUtjRDMrItkKIORIVwwo.OFre', 'admin', 'admin', '00000', '1', 'CT-ADM-0001', '2016-05-21', 'CT-ADM-0001', '2016-05-21', '1', NULL);
+INSERT INTO `user` (`username`, `password`, `nama`, `alamat`, `no_telp`, `posisi`, `created_by`, `created_date`, `updated_by`, `updated_date`, `status`, `photo`) VALUES ('CT-ADM-0002', '$2y$10$YnZD0bDkmOHEY4BDGRhLZOI3kqtCkkry.R9zwSUBM4uUAeLo5bzG2', 'Ike', 'Kamal, Madura', '000000', '1', 'CT-ADM-0001', '2016-05-21', NULL, NULL, NULL, NULL);
+
+
